@@ -2,6 +2,32 @@
 
 * =indemmar= - context managers for `matplotlib` plots
 
+** Example
+
+#+BEGIN_SRC python
+with plot(fname='fig/simple.png') as (fig, ax):
+    ax.plot([1, 3, 1, 4, 5, 1, 0])
+#+END_SRC
+[[./simple.png]]
+
+#+BEGIN_SRC python
+with plot_and_legend(ncol=2,
+                     fname='fig/legend.png',
+                     figsize=(10, 4),
+                     legend_side='right',
+                     legend_ncol=1) as (fig, ax):
+
+    x = np.linspace(0, np.pi * 2, 100)
+    ax[0].plot(x, np.sin(x), label="$y=sin(x)$", color='red')
+    ax[1].plot(x, np.cos(x), label="$y=cos(x)$", color='blue')
+    fig.suptitle('Periodic functions')
+
+#+END_SRC
+[[./legend.png]]
+
+
+** Idea
+
 The module allows a more DRY approach to using the =matplotlib= interface. For
 example, instead of:
 

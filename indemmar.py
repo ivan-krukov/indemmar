@@ -132,11 +132,11 @@ def plot_and_legend(fname=None,
 if __name__ == '__main__':
     # run examples
 
-    with plot(fname='simple.png') as (fig, ax):
+    with plot(fname='fig/simple.png') as (fig, ax):
         ax.plot([1, 3, 1, 4, 5, 1, 0])
 
     with plot_and_legend(ncol=2,
-                         fname='legend.png',
+                         fname='fig/legend.png',
                          figsize=(10, 4),
                          legend_side='right',
                          legend_ncol=1) as (fig, ax):
